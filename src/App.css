@@ -77,8 +77,13 @@ form button:hover {
   font-size: 1rem;
 }
 .complete-btn {
-  background: rgb(11, 212, 162);
+  background: #78e0fa;
 }
+.complete-btn:hover,
+.trash-btn:hover {
+  background: #4759fb;
+}
+
 .todo-item {
   padding: 0rem 0.5rem;
 }
@@ -88,10 +93,6 @@ form button:hover {
   pointer-events: none;
 }
 
-.fall {
-  transform: translateY(10rem) rotateZ(20deg);
-  opacity: 0;
-}
 
 .completed {
   text-decoration: line-through;
