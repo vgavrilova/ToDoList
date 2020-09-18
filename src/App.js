@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Input from './Components/Input';
+import TodoList from './Components/TodoList';
 
-function App() {
+const App = () => {
+  const [stateInput, setStateInput] = useState({
+    inputText: ''
+  });
+  const [stateTodos, setTodos] = useState([]);
+
+  const onChangeHandler = (event) => {
+    //console.log(event);
+
+    setStateInput({
+      inputText: event.target.value
+    });
+    //console.log(stateInput.inputText);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Todo List App </h1>
       </header>
+      <Input 
+      change={(event) => onChangeHandler(event)}/> 
+      <TodoList 
+      task="Make Homework"/>
     </div>
   );
 }
