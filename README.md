@@ -12,7 +12,7 @@ In this particular app a user cann add, delete and mark/unmark his/her todos as 
 In my Todo List React app I use only functional components and hooks for creating the state. 
 
 
-In later versions I am going to add a function of saving the todos to the local storage, so that they could be added again after refreshing the page.
+*UPD*: The local storage logic added. Now you can be sure that all of yout important todos are going to be saved till the next time you have a look at them ;)
 
 
 If you have any remarks and/or comments, feel free to contact me.

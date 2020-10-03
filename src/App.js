@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Input from './Components/Input';
 import TodoList from './Components/TodoList';
+import axios from 'axios';
 
 const App = () => {
 
@@ -16,16 +17,17 @@ const App = () => {
 
   const [filteredTodos, setFilteredTodos] = useState([]);
 
-/*   useEffect(() => {
+ useEffect(() => {
     getLocalTodods();
-  }, []); */
+  }, []);  
 
   
     // an empty array means that the function is going to be run only once
-    // but we can add the actions, after which thic function is going to run again
+    // but we can add the actions, after which this function is going to run again
     useEffect(() => {
       filterHandler();
-      //saveLocalTodods();
+      saveLocalTodods();
+   
     }, [stateTodos, status]);
 
   // Functions
@@ -66,19 +68,26 @@ const App = () => {
     }
   }
 
-/*   const saveLocalTodods = () => {
-    localStorage.setItem("stateTodos", JSON.stringify([stateTodos]));
+
+
+  // save todos to the local storage
+   const saveLocalTodods = () => {
+    localStorage.setItem('todos', JSON.stringify(stateTodos));
     
   };
+
+  // get todos from the storage
   const getLocalTodods = () => {
-    if(localStorage.getItem("stateTodos") === null) {
-      localStorage.setItem("stateTodos", JSON.stringify([]));
+    if(localStorage.getItem('todos') === null) {
+      localStorage.setItem('todos', JSON.stringify());
     } else {
-      let savedItems = JSON.parse(localStorage.getItem("stateTodos"));
+      let savedItems = JSON.parse(localStorage.getItem('todos'));
       setTodos(savedItems);
 
     }
-  }; */
+  }; 
+ 
+  
 
 
   return (
